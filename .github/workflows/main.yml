@@ -20,8 +20,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - name: Step 1 - Install ClawHub skill
-        run: npx clawhub@latest install verified-agent-identity
+      - name: Clean Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: echo "SUCCESS 🚀"
       - name: Install script dependencies
         run: |
           cd scripts
