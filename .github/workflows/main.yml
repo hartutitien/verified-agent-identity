@@ -19,8 +19,8 @@ jobs:
       - name: Install ClawHub
         run: npm install -g clawhub
 
-      - name: Install Verified Agent Identity
-        run: clawhub install verified-agent-identity
+      - name: Install dependencies
+        run: clawhub install
 
       - name: Install dependencies
         run: |
