@@ -1,4 +1,5 @@
 name: Verify Human Identity
+
 on:
   workflow_dispatch:
     inputs:
@@ -10,18 +11,20 @@ on:
         description: 'hartutitien'
         required: true
         default: 'hartutitien AI Agent'
+
 jobs:
   verify:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - name: Install ClawHub skill
-       run: npx clawhub@latest install verified-agent-identity
+
       - name: Install script dependencies
         run: |
           cd scripts
